@@ -45,12 +45,10 @@ const TaskListComponent = () => {
         setTasks(tempTasks);
     }
 
-    return (
-        <div className='col-12 card'>
-            <div className='card-header p-3'>
-                <h5>Your Task:</h5>
-            </div>
-            <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relatice', height: '400px'}}>
+    function tasksTable(){
+
+        if(tasks.length > 0) {
+            return (
                 <table>
                     <thead>
                         <tr>
@@ -64,16 +62,32 @@ const TaskListComponent = () => {
                         {/** TODO: Iterar sobre una lista de tareas */}
                         {/* <TaskComponent task={defaultTask}></TaskComponent> */}
                         {
-                            tasks.map((task,index) => {
-                                return(
+                            tasks.map((task, index) => {
+                                return (
                                     <TaskComponent key={index} task={task} complete={completeTask} remove={deleteTask}></TaskComponent>
                                 )
                             })
                         }
                     </tbody>
                 </table>
+            )
+        }else {
+            return (
+                <h3>There are no tasks to show</h3>
+            )
+        }
+        
+    }
+
+    return (
+        <div className='col-12 card'>
+            <div className='card-header p-3'>
+                <h5>Your Task:</h5>
             </div>
-            <TaskForm add={addTask}></TaskForm>
+            <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relatice', height: '400px'}}>
+                {tasksTable()}
+            </div>
+            <TaskForm add={addTask} length={tasks.length}></TaskForm>
         </div>
     );
 };

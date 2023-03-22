@@ -6,7 +6,7 @@ import './App.css';
 // import Greeting from './components/pure/greeting';
 // import Fgreeting from './components/pure/fgreeting';
 import TaskListComponent from './components/container/task_list';
-import OptionalRender from './components/pure/optionalRender';
+// import OptionalRender from './components/pure/optionalRender';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
 // import MiComponenteConContexto from './hooks/Example3.jsx'
@@ -18,7 +18,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
           {/* <Greeting name="Antonio"></Greeting> */}
           {/* <Fgreeting name="Antonio"></Fgreeting> */}
-          {/* <TaskListComponent></TaskListComponent> */}
+          <TaskListComponent></TaskListComponent>
           {/* <Example1></Example1> */}
           {/* <Example2></Example2> */}
           {/* <MiComponenteConContexto></MiComponenteConContexto> */}
@@ -31,7 +31,7 @@ function App() {
       {/* </header> */}
       {/* <Father></Father> */}
 
-      <OptionalRender></OptionalRender>
+      {/* <OptionalRender></OptionalRender> */}
     </div>
   );
 }
