@@ -7,7 +7,8 @@ import './App.css';
 // import Fgreeting from './components/pure/fgreeting';
 // import TaskListComponent from './components/container/task_list';
 // import LoginFormik from './components/pure/forms/loginFormik';
-import RegisterFormik from './components/pure/forms/registerFormik';
+// import RegisterFormik from './components/pure/forms/registerFormik';
+import TaskFormik from './components/pure/forms/taskFormik';
 // import OptionalRender from './components/pure/optionalRender';
 // import Example1 from './hooks/Example1';
 // import Example2 from './hooks/Example2';
@@ -35,7 +36,8 @@ function App() {
       {/* <OptionalRender></OptionalRender> */}
       {/* <TaskListComponent></TaskListComponent> */}
       {/* <LoginFormik></LoginFormik> */}
-      <RegisterFormik></RegisterFormik>
+      {/* <RegisterFormik></RegisterFormik> */}
+      <TaskFormik></TaskFormik>
     </div>
   );
 }

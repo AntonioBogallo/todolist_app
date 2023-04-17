@@ -6,8 +6,6 @@ import * as Yup from 'yup';
 
 const RegisterFormik = () => {
 
-    // let user = new User();
-
     const initialValues = {
         username: '',
         email: '',
@@ -41,10 +39,6 @@ const RegisterFormik = () => {
         }
 
     )
-
-    // const submit = (value) => {
-    //     alert('Register User');
-    // }
 
     return (
         <div>
