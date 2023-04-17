@@ -1,14 +1,16 @@
 import React from 'react';
+import { Task } from '../../../models/task.class';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { LEVELS } from '../../../models/levels.enum';
 
-const TaskFormik = () => {
+const TaskFormik = ({add,length}) => {
 
     const initialValues = {
         name: '',
         description: '',
-        level: LEVELS.NORMAL
+        level: LEVELS.NORMAL,
+        done: false
     }
 
     const taskSchema = Yup.object().shape(
@@ -28,15 +30,25 @@ const TaskFormik = () => {
         }
     )
 
+    function addTask(value) {
+        const newTask = new Task(
+            value.name,
+            value.description,
+            value.done,
+            value.level
+        )
+        add(newTask);
+    }
+
     return (
         <div>
             <h4>New Task</h4>
             <Formik
                 initialValues={initialValues}
                 validationSchema={taskSchema}
-                onSubmit={async (values) => {
-                    await new Promise((r) => setTimeout(r, 1000));
-                    alert(JSON.stringify(values, null, 2));
+                onSubmit={async values => {
+                    await new Promise((r) => setTimeout(r, 2000));
+                    addTask(values);
                 }}
             >
 

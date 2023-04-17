@@ -4,6 +4,7 @@ import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskForm from '../pure/forms/taskForm';
 import TaskComponent from '../pure/task';
+import TaskFormik from '../pure/forms/taskFormik';
 
 
 const TaskListComponent = () => {
@@ -96,7 +97,8 @@ const TaskListComponent = () => {
             {/* IMPROVE: ADD LOADING SPINNER */}
                 {loading ? <p style={loadingStyle}>Loading</p> :tasksTable()}
             </div>
-            <TaskForm add={addTask} length={tasks.length}></TaskForm>
+            {/* <TaskForm add={addTask} length={tasks.length}></TaskForm> */}
+            <TaskFormik add={addTask} length={tasks.length}></TaskFormik>
         </div>
     );
 };
