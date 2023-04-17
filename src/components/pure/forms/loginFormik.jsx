@@ -38,37 +38,37 @@ const LoginFormik = () => {
 
                 {
                     ({ values,errors, touched,isSubmitting,handleChange,handleBlur }) => (
-                    <Form>
-                        <label htmlFor="email">Email</label>
-                        <Field
-                            id="email"
-                            name="email"
-                            placeholder="Antonio@acme.com"
-                            type="email"
-                        />
+                        <Form>
+                            <label htmlFor="email">Email</label>
+                            <Field
+                                id="email"
+                                name="email"
+                                placeholder="Antonio@acme.com"
+                                type="email"
+                            />
 
-                        {
-                            errors.email && touched.email &&
-                            (
-                                <ErrorMessage name="email" component='div' />
-                            )
-                        }
+                            {
+                                errors.email && touched.email &&
+                                (
+                                    <ErrorMessage name="email" component='div' />
+                                )
+                            }
 
-                        <label htmlFor="password">Password</label>
-                        <Field id="password" type='password' name="password" placeholder="xxxxxxx" />
+                            <label htmlFor="password">Password</label>
+                            <Field id="password" type='password' name="password" placeholder="xxxxxxx" />
 
 
-                        {
-                            errors.password && touched.password &&
-                            (
-                                <ErrorMessage name="password" component='div' />
-                            )
-                        }
+                            {
+                                errors.password && touched.password &&
+                                (
+                                    <ErrorMessage name="password" component='div' />
+                                )
+                            }
 
-                        <button type="submit">Login</button>
+                            <button type="submit">Login</button>
 
-                        {isSubmitting ? <p>Login your credentials</p> : null}
-                    </Form>
+                            {isSubmitting ? <p>Login your credentials...</p> : null}
+                        </Form>
                     )
                 }
 
